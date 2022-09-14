@@ -1,6 +1,6 @@
-####Centro Universitário UNIESP
-####Disciplina: Linguagem de Programação I
-####Lista de Exercícios - Estruturas de Controle
+#### Centro Universitário UNIESP
+#### Disciplina: Linguagem de Programação I
+#### Lista de Exercícios - Estruturas de Controle
 
 1. Faça um programa que receba o valor dos créditos galácticos de um Star trooper e 
    o percentual de aumento, calcule e mostre os créditos galácticos com o novo
@@ -54,7 +54,7 @@
    - o nome do paciente mais velho;
    - o nome da mulher mais baixa.
 
-####Lista de Exercícios - Métodos
+#### Lista de Exercícios - Métodos
 
 1. Uma grande empresa te contratou para desenvolver um programa de empréstimos.
    Para atender a demanda dessa empresa você deve incialmente desenvolver uma
