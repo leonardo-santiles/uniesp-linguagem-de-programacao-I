@@ -75,5 +75,5 @@
       ```
       - quando for superior a 23 e menor ou igual a 33, use a fórmula
       ```
-      (valorEmprestimo * 10)/100
+      valorEmprestimo += (valorEmprestimo * 10)/100
       ```
