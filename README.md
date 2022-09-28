@@ -65,10 +65,10 @@
    - percentualJurosMes,
    - mesesParaPagar.
    
-   A classe empréstimo deverá ter os seguintes métodos:
-   1. **Imprimir**: Este método não retorna valor e deverá exibir na tela todos os atributos da
-      classe empréstimo. 
-   2. **calcularEmprestimo**: O valor do empréstimo é calculado seguindo a seguintes regras:
+A classe empréstimo deverá ter os seguintes métodos:
+   - **Imprimir:** Este método não retorna valor e deverá exibir na tela todos os atributos da
+      classe empréstimo.
+   - **calcularEmprestimo:** O valor do empréstimo é calculado seguindo a seguintes regras:
       - caso a idade seja maior ou igual a 18 e menor do que 23, use a fórmula
       ```
        valorEmprestimo += (valorEmprestimo / mesesParaPagar) * percentualJurosMes
