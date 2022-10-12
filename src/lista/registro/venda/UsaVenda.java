@@ -1,3 +1,10 @@
+/**
+ * Grupo:
+ * Angela M. Bernardelli
+ * Jessica M. V. Andrade
+ * Leonardo S. Dalacqua
+ */
+
 package lista.registro.venda;
 
 public class UsaVenda {
