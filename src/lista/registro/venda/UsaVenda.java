@@ -7,66 +7,161 @@
 
 package lista.registro.venda;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class UsaVenda {
+  static Scanner leitor = new Scanner(System.in);
+
+  static List<Vendedor> vendedores = new ArrayList<>();
+
+  static List<Produto> produtos = new ArrayList<>();
+
+  static List<Venda> vendas = new ArrayList<>();
+
   public static void main(String[] args) {
-    //Parte 1
-    Produto produto1 = new Produto(123, "Camisa", 400f, 250f, false);
 
-    Vendedor vendedor1 = new Vendedor("Angela", 321, "Rua do Limoeiro");
-    vendedor1.setComissao(0f); //0% de comissão
+    while (true) {
+      System.out.println("Opção | Descrição");
+      System.out.println("  1   | Cadastrar Vendedor");
+      System.out.println("  2   | Cadastrar Produto");
+      System.out.println("  3   | Registrar Venda");
+      System.out.println("  4   | Exibir Resumo das Vendas");
+      System.out.println("  5   | Sair");
 
-    Venda venda1 = new Venda();
-    venda1.setProduto(produto1);
-    venda1.setVendedor(vendedor1);
-    venda1.setQuantidadeItens(2);
-    venda1.setDesconto(0f);
+      System.out.printf("Digite a opção desejada: ");
 
-    float valorVenda1 = venda1.calcularValor();
-    venda1.setValor(valorVenda1);
-    System.out.printf("Valor da venda: %.2f", valorVenda1);
+      try {
+        int opcao = Integer.parseInt(leitor.nextLine());
 
-    float valorComissao1 = venda1.calcularComissao();
-    System.out.printf("Valor da comissão: %.2f", valorComissao1);
+        if (opcao == 1) {
+          cadastrarVendedor();
+        } else if (opcao == 2) {
+          cadastrarProduto();
+        } else if (opcao == 3) {
+          registrarVenda();
+        } else if (opcao == 4) {
+          exibirVendas();
+        } else if (opcao == 5) {
+          System.out.println("Fim");
+          break;
+        }
+      } catch (Exception e) {
+        System.out.println("Por favor, digite uma opção válida!");
+      }
+    }
+  }
 
-    venda1.imprimir();
+  static Vendedor criarVendedor() {
+    System.out.println("Digite o nome do vendedor: ");
+    String nome = leitor.nextLine();
 
-    //Parte 2
-    Produto produto2 = new Produto(456, "Short", 80f, 100f, true);
+    System.out.println("Digite o código do vendedor: ");
+    int codigo = Integer.parseInt(leitor.nextLine());
 
-    Vendedor vendedor2 = new Vendedor("Jessica", 654, "Rua Rio Tinto");
-    vendedor2.setComissao(0.05f); //5% de comissão
+    System.out.println("Digite o endereço do vendedor: ");
+    String endereco = leitor.nextLine();
 
-    Venda venda2 = new Venda();
-    venda2.setProduto(produto2);
-    venda2.setVendedor(vendedor2);
-    venda2.setQuantidadeItens(3);
-    venda2.setDesconto(10f); //Desconto de R$10,00
+    Vendedor vendedor = new Vendedor(nome, codigo, endereco);
 
-    float valorVenda2 = venda2.calcularValor();
-    venda2.setValor(valorVenda2);
-    System.out.printf("Valor da venda: R$ %.2f", valorVenda2);
+    System.out.println("Digite a comissão: ");
+    float comissao = Float.parseFloat(leitor.nextLine());
 
-    float valorComissao2 = venda2.calcularComissao();
-    System.out.printf("\nValor da comissão: R$ %.2f", valorComissao2);
+    if (comissao != 0f) {
+      vendedor.setComissao(comissao);
+    }
 
-    venda2.imprimir();
+    return vendedor;
+  }
 
-    //Parte 3
-    Venda venda3 = new Venda();
-    venda3.setProduto(produto2);
-    venda3.setVendedor(vendedor2);
-    venda3.setQuantidadeItens(2);
+  static void cadastrarVendedor() {
+    Vendedor vendedor = null;
 
-    float valorDesconto = venda3.efetuarDesconto(0.3f);
-    System.out.println("Valor da venda com desconto: R$ " + valorDesconto);
+    try{
+      vendedor = criarVendedor();
 
-    float valorVenda3 = venda3.calcularValor();
-    venda3.setValor(valorVenda3);
-    System.out.printf("Valor da venda: R$ %.2f", valorVenda3);
+    } catch (Exception e) {
+      System.out.println("Dados inválidos");
+      System.out.println("Tente novamente");
+    }
 
-    float valorComissao3 = venda3.calcularComissao();
-    System.out.printf("\nValor da comissão: R$ %.2f", valorComissao3);
+    vendedores.add(vendedor);
+  }
 
-    venda3.imprimir();
+  static Produto criarProduto() {
+    System.out.println("Digite o código do produto: ");
+    int codigo = Integer.parseInt(leitor.nextLine());
+
+    System.out.println("Digite a descrição do produto: ");
+    String descricao = leitor.nextLine();
+
+    System.out.println("Digite o valor de venda: ");
+    float valorVenda = Float.parseFloat(leitor.nextLine());
+
+    System.out.println("Digite o valor de custo: ");
+    float valorCusto = Float.parseFloat(leitor.nextLine());
+
+    boolean promocao = false;
+    System.out.println("Produto em promoção? (S ou N)");
+    String emPromocao = leitor.nextLine();
+
+    if (emPromocao.equals("S")) {
+      promocao = true;
+    }
+
+    Produto produto = new Produto(codigo, descricao, valorVenda, valorCusto, promocao);
+
+    return produto;
+  }
+
+  static void cadastrarProduto() {
+    Produto produto = null;
+    try {
+      produto = criarProduto();
+    } catch (Exception e) {
+      System.out.println("Dados inválidos");
+      System.out.println("Tente novamente");
+    }
+    produtos.add(produto);
+  }
+
+  static Venda criarVenda() {
+    Vendedor vendedor = criarVendedor();
+    Produto produto = criarProduto();
+
+    System.out.println("Digite a quantidade: ");
+    int quantidade = Integer.parseInt(leitor.nextLine());
+
+    System.out.printf("Digite o desconto: ");
+    float desconto = Float.parseFloat(leitor.nextLine());
+
+    Venda venda = new Venda();
+    venda.setVendedor(vendedor);
+    venda.setProduto(produto);
+    venda.setQuantidadeItens(quantidade);
+    venda.setDesconto(desconto);
+
+    float valorVenda = venda.calcularValor();
+    venda.setValor(valorVenda);
+
+    return venda;
+  }
+
+  static void registrarVenda() {
+    Venda venda = null;
+    try {
+      venda = criarVenda();
+    } catch (Exception e) {
+      System.out.println("Dados inválidos");
+      System.out.println("Tente novamente");
+    }
+    vendas.add(venda);
+  }
+
+  static void exibirVendas() {
+    for (Venda venda : vendas) {
+      venda.imprimir();
+    }
   }
 }
