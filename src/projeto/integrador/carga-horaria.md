@@ -1,0 +1,10 @@
+# Carga Horária
+
+O tecnólogo em Sistemas para Internet possui duração de 2,5 anos, com uma carga horária de 2.400 horas.  Esse tempo é determinado pelo MEC (Ministério da Educação) e a faculdade tem liberdade para distribuir as horas de acordo com aulas teóricas, práticas, exercícios, provas, entre outras atividades.
+
+O curso ocupa-se do desenvolvimento de sistemas corporativos, aplicativos web e mobile, sistemas para comércio eletrônico, além de portais para internet e intranet. Esse profissional gerencia projetos de sistemas, inclusive com acesso a banco de dados, atua com tecnologias emergentes, como computação móvel, redes sem fio e sistemas distribuídos. Além disso, é responsável pela implantação, atualização, manutenção e segurança dos sistemas para Internet.
+
+Os cursos do tipo Tecnólogo foram criados com o objetivo de suprir com mais rapidez as demandas do mercado de trabalho. Eles existem há muito tempo, mas só ficaram populares após os anos 2000 com o desenvolvimento da internet e a oportunidade de estudar a distância. Essa formação tem como foco principal o mercado de trabalho, por essa razão, os alunos consegue se formar em um tempo menor do que se fizesse uma Licenciatura ou um Bacharelado.
+
+Além do tempo reduzido para se formar, existem outros benefícios de optar por um curso Tecnólogo. O aluno consegue conciliar os estudos com outras atividades, visto que, o tempo em sala de aula é reduzido. Os cursos Tecnólogos apresentam conteúdos mais específicos e dinâmicos
+ para o respectivo campo de atuação, sendo a vivência em sala de aula muito prática. O estudante sai da graduação pronto para colocar em prática os conhecimentos adquiridos. Para quem já trabalha e está insatisfeito com o emprego atual, o curso Tecnólogo é uma excelente opção. O curso auxilia o aluno a descobrir as oportunidades da nova profissão pode oferecer e adquire conhecimentos a curto prazo para encontrar ofertas de trabalho.
